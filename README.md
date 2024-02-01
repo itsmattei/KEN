@@ -37,11 +37,14 @@ pip install -r requirements.txt
 ```
 3. Train your model. For simplicity, we have created a useful package to train an LLM quickly and efficiently.
 Be sure to import the right file from those proposed.
-```
-from KEN.setup.easy_train import Training_to_split
+<pre>
+  <code class="language-python">
+    from KEN.setup.easy_train import Training_to_split
 
-Training = Training_to_split(train_text, train_labels, tokenizer, model)
-training = Training.train()
+    Training = Training_to_split(train_text, train_labels, tokenizer, model)
+    training = Training.train()
+    </code>
+  </pre>
 ```
 
 ### Contributing
