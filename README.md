@@ -75,7 +75,7 @@ Both versions function identically, but we **strongly recommend** using the firs
 from KEN.pretrained_model_injection.inject_all_layers import Kernel_injection
 
 KEN_injection = Kernel_injection(trained_model, pre_trained_model, k)
-optimize_model = KEN_injection.inject_all_parameters()
+optimized_model = KEN_injection.inject_all_parameters()
 ```
 
 Otherwise, it is possible to inject only a selected range of params, such as the attention layers:
@@ -83,7 +83,7 @@ Otherwise, it is possible to inject only a selected range of params, such as the
 from KEN.pretrained_model_injection.inject_attention_layers import Kernel_injection
 
 KEN_injection = Kernel_injection(trained_model, pre_trained_model, k)
-optimize_model = KEN_injection.inject_attention_layers()
+optimized_model = KEN_injection.inject_attention_layers()
 ```
 
 ## Result
@@ -111,7 +111,7 @@ To download the compressed model and its support dictionary, use the code below:
 ```python
 from KEN.model_compression.compress_file import Compress_model
 
-Cm = Compress_model(pre_trained_model, optimize_model)
+Cm = Compress_model(pre_trained_model, optimized_model)
 Cm.compress('./path')
 ```
 
@@ -127,7 +127,7 @@ You can easly use KENviz using the following code block:
 ```python
 from KENviz.KEN_viz import KEN_viz
 
-K_v = KEN_viz(pre_trained_model, optimize_model, matrix_name)
+K_v = KEN_viz(pre_trained_model, optimized_model, matrix_name)
 K_v.Ken_visualizer()
 ```
 **Pro Tip**: The `matrix_name` is required for all visualizzation types. KENviz automatically handles selecting all relevant matrices in each layer based on your provided name.
