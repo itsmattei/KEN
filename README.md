@@ -38,7 +38,6 @@ pip install -r requirements.txt
 3. Train your model
 
 For simplicity, we have created a useful package to train an LLM quickly and efficiently.
-
 Be sure to import the right file from those proposed.
 
 ```python
@@ -66,7 +65,7 @@ Test.prediction()
 
 4. KEN injection
 
-Once the model is trained you can use KEN to extract the best k parameters for each model matrix and reset the others.
+Once the model is trained you can use KEN to extract the best _k_ parameters in each matrix row and reset the others.
 In this repository we have created two versions of KEN:
   - **Injection** KEN injects the selected KDE parameters into a pre-trained model.
   - **Reset** KEN resets to their pre-trained value the not selected parameters into the fine-tuned model.
@@ -86,6 +85,18 @@ from KEN.pretrained_model_injection.inject_attention_layers import Kernel_inject
 KEN_injection = Kernel_injection(trained_model, pre_trained_model, k)
 optimize_model = KEN_injection.inject_attention_layers()
 ```
+
+## Result
+| Model | Trainable params | Accuracy on glue-sst2 |
+| :---         |     :---: |        :---: |
+| Bert-base    | 109M      | 93.37    |
+| Hybrid       | 94M       | 93.23      |
+| HybridNT     | 94M       | 92.20    |
+|**KEN**      |  **80M**    |      **93.80**|
+||||
+| Hybrid       | 66M    | 91.97 |
+| HybridNT     | 66M    | 90.71 |
+
 
 ### Contributing
 We welcome contributions to this repository. Please feel free to open issues or submit pull requests.
