@@ -35,13 +35,45 @@ git clone https://github.com/itsmattei/KEN.git
 ```
 pip install -r requirements.txt
 ```
-3. Train your model. For simplicity, we have created a useful package to train an LLM quickly and efficiently.
+3. Train your model.
+
+For simplicity, we have created a useful package to train an LLM quickly and efficiently.
 Be sure to import the right file from those proposed.
+
 ```python
 from KEN.setup.easy_train import Training_to_split
 
 Training = Training_to_split(train_text, train_labels, tokenizer, model)
 training = Training.train()
+```
+or if your dataset has already the validation test, you can use the following command:
+
+```python
+from KEN.setup.easy_train import Training_to_split
+
+Training = Training_splitted(train_text, train_labels, val_text, val_labels, tokenizer, model)
+training = Training.train()
+```
+
+4. Once the model is trained you can use KEN to extract the best k parameters for each model matrix and reset the others.
+In this repository we have created two versions of KEN:
+  - **Injection** KEN injects the selected KDE parameters into a pre-trained model.
+  - **Reset** KEN resets to their pre-trained value the not selected parameters into the fine-tuned model.
+
+Both versions function identically, but we **strongly recommend** using the first version to run tests in succession without altering the trained model.
+```python
+from KEN.pretrained_model_injection.inject_all_layers import Kernel_injection
+
+KEN_injection = Kernel_injection(trained_model, pre_trained_model, k)
+inj_model = KEN_injection.inject_all_parameters()
+```
+
+Otherwise, it is possible to inject only a selected range of params, such as the attention layers:
+```python
+from KEN.pretrained_model_injection.inject_attention_layers import Kernel_injection
+
+KEN_injection = Kernel_injection(trained_model, pre_trained_model, k)
+inj_model = KEN_injection.inject_all_parameters()
 ```
 
 ### Contributing
