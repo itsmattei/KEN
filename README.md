@@ -3,7 +3,7 @@ KEN (Kernel density Estimator for Neural Network compression): a straightforward
 
 ![](https://github.com/itsmattei/KEN/blob/main/files/KEN_workflow.gif)
 
-This repository contains all the code to replicate the experiments shown in [_KEN: a Universal and Simple Non-Parametric Pruning Algorithm for Large Language Models_](https://pages.github.com/)
+This repository contains all the code to replicate the experiments shown in [_KEN: a Universal and Simple Non-Parametric Pruning Algorithm for Large Language Models_](...)
 
 Based on the different KEN application, this repository includes the following packages:
 ```bash
@@ -87,16 +87,21 @@ optimize_model = KEN_injection.inject_attention_layers()
 ```
 
 ## Result
+Here we show some results included in our [paper](...)
+
 | Model | Trainable params | Accuracy on glue-sst2 |
 | :---         |     :---: |        :---: |
 | Bert-base    | 109M      | 93.37    |
-| Hybrid       | 94M       | 93.23      |
-| HybridNT     | 94M       | 92.20    |
+| [Hybrid](https://arxiv.org/abs/2109.04838)       | 94M       | 93.23      |
+| [HybridNT](https://arxiv.org/abs/2109.04838)     | 94M       | 92.20    |
 |**KEN**      |  **80M**    |      **93.80**|
 ||||
 | Hybrid       | 66M    | 91.97 |
 | HybridNT     | 66M    | 90.71 |
-
+| [Sajjad](https://arxiv.org/abs/2004.03844)       | 66M    | 90.30 |
+| [Gordon](https://arxiv.org/abs/2002.08307)       | 66M    | 90.80 |
+|[Flop](https://arxiv.org/abs/1910.04732)          | 66M    | 83.20 |
+|**KEN**       | **63M** | **92.90** |
 
 ### Contributing
 We welcome contributions to this repository. Please feel free to open issues or submit pull requests.
