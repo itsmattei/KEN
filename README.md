@@ -5,7 +5,7 @@ KEN (Kernel density Estimator for Neural Network compression): a straightforward
 
 This repository contains all the code to replicate the experiments shown in [_KEN: a Universal and Simple Non-Parametric Pruning Algorithm for Large Language Models_](...)
 
-Based on the different KEN application, this repository includes the following packages:
+Based on the different KEN applications, this repository includes the following packages:
 ```bash
 KEN
 ├── setup                              <-- a useful package to train your LLM very quickly
@@ -50,7 +50,7 @@ training = Training.train()
 Test = Testing(test_text, test_labels, tokenizer, model)
 Test.prediction()
 ```
-or if your dataset has already the validation test, you can use the following command:
+or if your dataset already has the validation test, you can use the following command:
 
 ```python
 from KEN.setup.easy_train import Training_to_split
@@ -68,7 +68,7 @@ Test.prediction()
 Once the model is trained you can use KEN to extract the best _k_ parameters in each matrix row and reset the others.
 In this repository we have created two versions of KEN:
   - **Injection** KEN injects the selected KDE parameters into a pre-trained model.
-  - **Reset** KEN resets to their pre-trained value the not selected parameters into the fine-tuned model.
+  - **Reset** KEN resets the not-selected parameters to their pre-trained value into the fine-tuned model.
 
 Both versions function identically, but we **strongly recommend** using the first version if you want to run tests in succession without altering the trained model.
 ```python
@@ -115,7 +115,7 @@ Cm = Compress_model(pre_trained_model, optimized_model)
 Cm.compress('./path')
 ```
 
-## KEN visualizer
+# KEN visualizer 😎
 ![](https://github.com/itsmattei/KEN/blob/main/files/KENviz.gif)
 
 _KENviz_ is a visualization tool that provides a clear understanding of the composition of matrices after applying the KEN pruning step. It offers various views to explore the pruned model, including:
@@ -123,17 +123,17 @@ _KENviz_ is a visualization tool that provides a clear understanding of the comp
 2. **Neighbor Count View**: It visualizes the number of nonzero neighbors (horizontally and vertically) for each point in a given matrix.
 3. **Layer-wise View**: This iterative view applies the previous two views to each matrix in each model layer.
 
-You can easly use KENviz using the following code block:
+You can easily use KENviz using the following code block:
 ```python
 from KENviz.KEN_viz import KEN_viz
 
 K_v = KEN_viz(pre_trained_model, optimized_model, matrix_name)
 K_v.Ken_visualizer()
 ```
-**Pro Tip**: The `matrix_name` is required for all visualizzation types. KENviz automatically handles selecting all relevant matrices in each layer based on your provided name.
+**Pro Tip**: The `matrix_name` is required for all visualization types. KENviz automatically handles selecting all relevant matrices in each layer based on your provided `matrix_name`.
 
-### Contributing
+## Contributing 🖤
 We welcome contributions to this repository. Please feel free to open issues or submit pull requests.
 
-### License
+## License
 This repository is licensed under the MIT License.
