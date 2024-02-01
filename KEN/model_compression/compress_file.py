@@ -3,7 +3,7 @@ import torch
 from tqdm import tqdm_notebook
 from collections import OrderedDict
 
-class Compressed_matrix:
+class Compress_model:
     def __init__(
         self,
         model_base,
@@ -68,7 +68,7 @@ class Compressed_matrix:
         ind_dict, compressed_layers = self.extract_index_dict(self.model_base, self.inj_model)
         self.create_compressed_pt_file(self.inj_model, compressed_layers, ind_dict, path)
         
-    def decompresse_pt_file(sefl, base_model, path, ind_dict):
+    def decompresse_pt_file(self, base_model, path, ind_dict):
         compressed_layers = torch.load(path)
         state_dict = base_model.state_dict()
 

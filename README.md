@@ -103,6 +103,35 @@ Here we show some results included in our [paper](...)
 |[Flop](https://arxiv.org/abs/1910.04732)          | 66M    | 83.20 |
 |**KEN**       | **63M** | **92.90** |
 
+
+## File compression
+KEN aims to reduce the size of transformer models, including their file sizes. It uses a subnetwork with $k$-trained parameters, which is saved and injected into its pre-trained counterpart, with the help of a support file.
+
+To download the compressed model and its support dictionary, use the code below:
+```python
+from KEN.model_compression.compress_file import Compress_model
+
+Cm = Compress_model(pre_trained_model, optimize_model)
+Cm.compress('./path')
+```
+
+## KEN visualizer
+![](https://github.com/itsmattei/KEN/blob/main/files/KENviz.gif)
+
+_KENviz_ is a visualization tool that provides a clear understanding of the composition of matrices after applying the KEN pruning step. It offers various views to explore the pruned model, including:
+1. **Single Matrix View**: It displays only the retained parameters, leaving the pruned ones blank.
+2. **Neighbor Count View**: It visualizes the number of nonzero neighbors (horizontally and vertically) for each point in a given matrix.
+3. **Layer-wise View**: This iterative view applies the previous two views to each matrix in each model layer.
+
+You can easly use KENviz using the following code block:
+```python
+from KENviz.KEN_viz import KEN_viz
+
+K_v = KEN_viz(pre_trained_model, optimize_model, matrix_name)
+K_v.Ken_visualizer()
+```
+**Pro Tip**: The `matrix_name` is required for all visualizzation types. KENviz automatically handles selecting all relevant matrices in each layer based on your provided name.
+
 ### Contributing
 We welcome contributions to this repository. Please feel free to open issues or submit pull requests.
 
