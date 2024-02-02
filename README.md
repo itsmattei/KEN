@@ -12,7 +12,7 @@ KEN
     ├── easy_train.py
     └── easy_train_large_models.py         
 ├── model_compression                       <-- for downloading the compressed model and its supporting dictionary
-└──compress_file.py
+    └──compress_file.py
 ├── pretrained_model_injection              <-- KEN injects the selected fine-tuned params in a pre-trained model
     ├── inject_all_layers.py
     └── inject_attention_layers.py
