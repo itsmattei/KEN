@@ -3,7 +3,7 @@
 
 KEN (**K**ernel density **E**stimator for **N**eural Network compression): a straightforward, universal and unstructured pruning algorithm based on Kernel Density Estimation (KDE) for transformer compression.
 
-This repository contains all the code to replicate the experiments shown in [_KEN: a Universal and Simple Non-Parametric Pruning Algorithm for Large Language Models_](https://arxiv.org/abs/2402.03142)
+This repository contains all the code to replicate the experiments shown in [_Less is KEN: a Universal and Simple Non-Parametric Pruning Algorithm for Large Language Models_](https://arxiv.org/abs/2402.03142)
 
 ![](https://github.com/itsmattei/KEN/blob/main/files/KEN_workflow.gif)
 
