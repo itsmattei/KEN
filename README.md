@@ -29,15 +29,15 @@ KENviz                                      <-- Visualization tool
 ## Usage
 To use KEN, you can simply follow these steps:
 
-1. Clone the repository
+**1. Clone the repository**
 ```
 git clone https://github.com/itsmattei/KEN.git
 ```
-2. Install the dependencies
+**2. Install the dependencies**
 ```
 pip install -r requirements.txt
 ```
-3. Train your model
+**3. Train your model**
 
 For simplicity, we have created a useful package to train an LLM quickly and efficiently.
 Be sure to import the right file from those proposed.
@@ -65,7 +65,7 @@ Test = Testing(test_text, test_labels, tokenizer, model)
 Test.prediction()
 ```
 
-4. KEN injection
+**4. KEN injection**
 
 Once the model is trained you can use KEN to extract the best _k_ parameters in each matrix row and reset the others.
 In this repository we have created two versions of KEN:
