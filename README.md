@@ -10,7 +10,7 @@ This repository contains all the code to replicate the experiments shown in [_KE
 Based on the different KEN applications, this repository includes the following packages:
 ```bash
 KEN
-├── setup                              <-- a useful package to train your LLM very quickly
+├── setup                                   <-- a useful package to train your LLM very quickly
     ├── easy_train.py
     └── easy_train_large_models.py         
 ├── model_compression                       <-- for downloading the compressed model and its supporting dictionary
