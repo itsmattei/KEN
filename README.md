@@ -132,6 +132,19 @@ K_v.Ken_visualizer()
 ```
 **Pro Tip**: The `matrix_name` is required for all visualization types. KENviz automatically handles selecting all relevant matrices in each layer based on your provided `matrix_name`.
 
+## Cite us
+We appreciate your interest in using our work! If you find this repository helpful in your research or project, please cite it using the following information:
+```
+@misc{mastromattei2024ken,
+      title={Less is KEN: a Universal and Simple Non-Parametric Pruning Algorithm for Large Language Models},
+      author={Michele Mastromattei and Fabio Massimo Zanzotto},
+      year={2024},
+      eprint={2402.03142},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+```
+
 ## Contributing 🖤
 We welcome contributions to this repository. Please feel free to open issues or submit pull requests.
 

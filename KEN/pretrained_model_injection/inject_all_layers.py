@@ -43,7 +43,7 @@ class Kernel_Density:
         for elem in element_to_find:
             index = self.closest(lista, elem)
             closest_KDE_list.append(lista[index])
-            lista = np.delete(lst, index, axis=0)
+            lista = np.delete(lista, index, axis=0)
 
         return closest_KDE_list
 
